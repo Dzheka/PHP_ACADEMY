@@ -33,7 +33,7 @@ class PDOopt {
         $this->pdo = new PDO(DB_DSN, DB_USER, DB_PASS);
     }
 
-    public function __desctuct() {
+    public function __destruct() {
         $this->pdo = null;
     }
 

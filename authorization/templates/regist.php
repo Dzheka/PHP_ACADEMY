@@ -23,7 +23,7 @@
                     </div>
                     <div class="input-group mb-3">
                         <div class="custom-file">
-                            <input type="file" class="custom-file-input" id="uphoto">
+                            <input type="file" class="custom-file-input" name="uphoto" id="uphoto">
                             <label class="custom-file-label" for="uphoto">Choose your profile picture</label>
                         </div>
                     </div>

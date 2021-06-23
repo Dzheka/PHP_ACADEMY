@@ -13,9 +13,10 @@ switch ($act) {
 }
 
 function main() {
-    // $users = new User();
+    $users = new User();
     $page['title'] = "Main page";
-    // $page['users'] = $user->getAllUsers();
+    $page['users'] = $users->getUsersCount();
+    $page['userphotoes'] = $users->getRandomUserProfile();
 
     require_once(TEMPLATES. 'main.php');
 }
@@ -24,10 +25,10 @@ function regist() {
     $page['title'] = "Registration";
 
     if (!empty($_POST)) {
-        // $_POST['uphoto'] = uploadProfilePicture($_FILES);
-        var_dump($_POST);
-        $user = new User($_POST);
-        var_dump($user);
+        $photo = uploadProfilePicture($_FILES);
+        $client = getClientInfo();
+        $data = array_merge($_POST, ['uphoto' => './photos/'. $photo], $client);
+        $user = new User($data);
         $user->add();
 
         header("Location: ?". http_build_query(array(
