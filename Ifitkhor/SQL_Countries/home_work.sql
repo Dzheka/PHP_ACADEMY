@@ -93,5 +93,9 @@ UPDATE cities SET density=ROUND(population/square, 2) WHERE 1;
 UPDATE cities SET is_active = false ORDER BY density ASC LIMIT 5;
 
 //Удалить 2 страны с наименьшим количеством городов
-DELETE FROM countries ORDER BY name DESC LIMIT 2;
+DELETE FROM countries where id =
+(SELECT id from (SELECT countries.id as ID, countries.name as name, COUNT(cities.id) as quant
+ from countries
+inner join cities on countries.id = cities.country_id
+GROUP BY countries.id ORDER BY quant, name LIMIT 1) as s);
 
