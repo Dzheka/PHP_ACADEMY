@@ -1,1 +1,2 @@
 authorization/photos/*
+!authorization/photos/nophoto.jpg
