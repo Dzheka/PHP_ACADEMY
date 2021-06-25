@@ -1,1 +1,2 @@
-authorization/photos/*.jpg
+authorization/photos/*
+authorization/photos/.gitkeep
