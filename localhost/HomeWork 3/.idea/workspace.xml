@@ -2,23 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fae172e0-44e6-4295-8c3a-6aaa21ef6178" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../../HomeWork" beforeDir="false" afterPath="$PROJECT_DIR$/../../HomeWork" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../HomeWork_Academy/HomeWork" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../HomeWork_Academy/HomeWork 2/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../HomeWork_Academy/HomeWork 2/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../HomeWork_Academy/HomeWork 2/.idea/test.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../HomeWork_Academy/HomeWork 2/calculyator.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../HomeWork_Academy/HomeWork 2/errors.scv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../HomeWork_Academy/HomeWork 2/index.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../HomeWork_Academy/HomeWork 2/minus.scv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../HomeWork_Academy/HomeWork 2/plus.scv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../HomeWork_Academy/HomeWork 2/test.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../HomeWork_Academy/HomeWork 3/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../HomeWork_Academy/HomeWork 3/.idea/HomeWork 3.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../HomeWork_Academy/HomeWork 3/.idea/dataSources.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../HomeWork_Academy/HomeWork 3/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../HomeWork_Academy/HomeWork 3/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../HomeWork_Academy/HomeWork 3/index.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../../.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../HomeWork Academy/HomeWork" beforeDir="false" afterPath="$PROJECT_DIR$/../HomeWork Academy/HomeWork" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
