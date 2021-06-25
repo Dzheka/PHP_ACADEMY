@@ -1,2 +1,2 @@
 authorization/photos/*
-authorization/photos/.gitkeep
+!authorization/photos/.gitkeep
