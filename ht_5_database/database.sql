@@ -99,7 +99,7 @@ UPDATE `cities` SET `cities`.is_active = FALSE ORDER BY cities.people_den DESC L
 
 ALTER TABLE `countries` ADD COLUMN `cities_quantity` VARCHAR(255) NOT NULL DEFAULT 0;
 
-UPDATE countries SET countries.cities_quantity = (SELECT COUNT(cities.name) AS city_name FROM cities WHERE cities.country_id = countries.id) WHERE id; #COUNT(cities.name) INNER JOIN cities C ON cities.country_id = countries.id;
+UPDATE countries SET countries.cities_quantity = (SELECT COUNT(cities.name) AS city_name FROM cities WHERE cities.country_id = countries.id) WHERE id;
 SELECT * FROM `countries`;
 
 DELETE FROM countries WHERE id ORDER BY cities_quantity LIMIT 2;
