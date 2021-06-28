@@ -1,5 +1,5 @@
 <?php
-//print_r($_POST); die;
+
 try{
     $id = $_GET["id"];
     $cityName = $_POST["cityName"];

@@ -4,14 +4,10 @@
 try {
     $conn = new PDO("mysql:host=localhost;dbname=countries_db", "root", "root");
     $statement = $conn->prepare("SELECT cities.id as id, cities.name as name, cities.population as population, cities.area as area, cities.people_den as people_den, country.name as country_name FROM `cities` join `countries` as country on country.id = cities.country_id order by id desc");
-//    $statement = $conn->prepare("SELECT * FROM `cities` join `countries` as country on country.id = cities.country_id");
 
     $statement->execute();
     $cities = $statement->fetchAll(PDO::FETCH_ASSOC);
-//    echo "<pre>";
-//    print_r($cities);
-//    echo "</pre>";
-//    die;
+
 }catch(PDOException $e){
     echo $e->getMessage();
 }
