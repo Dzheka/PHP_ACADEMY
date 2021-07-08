@@ -1,111 +1,74 @@
 <?php
-/*
- #1
- Дано целое число (задать его функцией rand()). Если оно является положительным, то прибавить к нему 1; если
- отрицательным, то вычесть из него 2; если нулевым, то заменить его на 10. Вывести полученное число.
-*/
-echo "<h3>Task 1</h3> <p> Дано целое число (задать его функцией rand()). Если оно является положительным, то прибавить к нему 1; если
- отрицательным, то вычесть из него 2; если нулевым, то заменить его на 10. Вывести полученное число.</p>" . "<br />";
-$number = rand(-50, 50);
-echo "Рандомное число:  " . $number . "<br />";
+    //header('Location: /a.php');
+    //exit;
+    
+    header('Expires: Mon, 26 Jul 1997 05:00:00 GMT');
+    header('Last-Modified: ' . gmdate('D, d M Y H:i:s').' GMT');
+    header('Cache-Control: no-cache, must-revalidate');
+    header('Cache-Control: post-check=0,pre-check=0', false);
+    header('Cache-Control: max-age=0', false);
+    header('Pragma: no-cache');
+    
+    print_r(getallheaders());
+?>
+=======================================================================================
+<?php
+    $counter = 0;
+    if (isset($_COOKIE['counter'])) {
+        $counter = $_COOKIE['counter'];
+        $counter++;
+    }
+    setcookie('counter', $counter, time() + 3600);
+    echo $counter;
+?>
+========================================================================================
 
-if ($number > 0){
-    echo "Результат: " . $number += 1;
-}
-if ($number == 0){
-    echo "Результат: " . $number = 10;
-}
-if ($number < 0){
-    echo "Результат: " . $number += 2;
-}
+<?php
+    session_start();
+    $counter = $_SESSION['counter']?? 0;
+    $counter++;
+    $_SESSION['counter'] = $counter;
+    print_r($_COOKIE);
+    //unset($_SESSION['counter']);
+    echo $counter;
+?>
 
-/*
-  #2
-  Даны три целых числа (задать их функцией rand()). Найти количество положительных и количество отрицательных чисел в
-  исходном наборе.
-*/
-
-echo "<br />" . "<h3>Task 2</h3> <p>Даны три целых числа (задать их функцией rand()). Найти количество положительных и количество отрицательных чисел в
-  исходном наборе.</p>" . "<br />";
-
-$num1 = rand(-40, 40);
-$num2 = rand(-80, 80);
-$num3 = rand(-70, 70);
-echo "1-ое число: " . $num1 . "<br />";
-echo "2-ое число: " . $num2 . "<br />";
-echo "3-ье число: " . $num3 . "<br />";
-$count = 0;
-$discount = 0;
-
-if ($num1 >= 0){
-    $count++;
-}else{
-    $discount++;
-}
-if($num2 >= 0){
-    $count++;
-}else{
-    $discount++;
-}
-if($num3 >= 0){
-    $count++;
-}else{
-    $discount++;
-}
-echo "Количество положительных чисел " . $count . "<br />";
-echo "Количество отрицательных чисел " . $discount;
-
-
-/*
- #3
- Даны два числа (задать их функцией rand()). Вывести большее из них.
-*/
-echo "<br />" . "<h3>Task 3</h3> <p>Даны два числа (задать их функцией rand()). Вывести большее из них.</p>" . "<br />";
-
-$num1 = rand(-50, 50);
-$num2 = rand(-50, 50);
-echo "1-ое число: " . $num1 . "<br />";
-echo "2-ое число: " . $num2 . "<br />";
-if ($num1 > $num2){
-    echo "Наибольшое число: " . $num1;
-}elseif($num1 == $num2) {
-    echo "Оба числа равны";
-}else{
-    echo "Наибольшое число: " . $num2;
-}
-
-/*
-  #4
-  Дано целое число в диапазоне 1–7 (задать его функцией rand()). Вывести строку — название дня недели, соответствующее
-  данному числу (1 — «понедельник», 2 — «вторник» и т. д.).
- */
-echo "<br />" . "<h3>Task 4</h3> <p>Дано целое число в диапазоне 1–7 (задать его функцией rand()). Вывести строку — название дня недели, соответствующее
-  данному числу (1 — «понедельник», 2 — «вторник» и т. д.).</p>" . "<br />";
-
-$day = rand(1, 7);
-$result = 0;
-echo $day . "<br />";
-switch($day){
-    case 1:
-        $result = "Понидельник";
-        break;
-    case 2:
-        $result = "Вторник";
-        break;
-    case 3:
-        $result = "Среда";
-        break;
-    case 4:
-        $result = "Четверг";
-        break;
-    case 5:
-        $result = "Пятница";
-        break;
-    case 6:
-        $result = "Суббота";
-        break;
-    case 7:
-        $result = "Воскресенье";
-        break;
-}
-echo $result;
+=========================================================================================
+<?php
+    session_start();
+    $error = false;
+    if (isset($_POST['auth'])) {
+        $_SESSION['login'] = $_POST['login'];
+        $_SESSION['password'] = md5($_POST['password']);
+        $error = true;
+    }
+    if (isset($_GET['f']) && $_GET['f'] == 'logout') {
+        unset($_SESSION['login']);
+        unset($_SESSION['password']);
+    }
+    $login = 'admin';
+    $password = '202cb962ac59075b964b07152d234b70';
+    $auth = false;
+    $iss = isset($_SESSION['login']) && isset($_SESSION['password']);
+    if ($iss && $_SESSION['login'] === $login && $_SESSION['password'] === $password) {
+        $auth = true;
+        $error = false;
+    }
+?>
+<?php if ($error) { ?><p>Неверные логин и/или пароль!</p><?php } ?>
+<?php if ($auth) { ?>
+    <p>Здравствуйте, <?=$login?>!</p>
+    <a href='index.php?f=logout'>Выход</a>
+<?php } else { ?>
+<form name="auth" method="post" action="index.php">
+    <p>
+        Логин: <input type="text" name="login" />
+    </p>
+    <p>
+        Пароль: <input type="password" name="password" />
+    </p>
+    <p>
+        <input type="submit" name="auth" value="Войти" />
+    </p>
+</form>
+<?php } ?>
