@@ -7,5 +7,4 @@ trait Trait3
     {
         return 3;
     }
-
 }
