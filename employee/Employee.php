@@ -14,17 +14,17 @@ class Employee
 
     public function getName()
     {
-        $this->name;
+       echo $this->name;
     }
 
     public function setAge($age)
     {
-        $this->isAgeCorrect();
+        $this->isAgeCorrect($age);
     }
 
     public function getAge()
     {
-        $this->age;
+       echo $this->age;
     }
 
     public function setSalary($salary)
@@ -35,7 +35,7 @@ class Employee
 
     public function getSalary()
     {
-        $this->salary."$";
+        echo $this->salary."$";
     }
 
     private function isAgeCorrect($age)
