@@ -40,7 +40,7 @@ class Employee
 
     private function isAgeCorrect($age)
     {
-        if (($age > 0) || ($age <= 100))
+        if (($age > 0) && ($age <= 100))
         {
             $this->age = $age;
         }
