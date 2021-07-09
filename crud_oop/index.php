@@ -5,7 +5,7 @@ if (isset($_POST['postSave'])){
         $_POST['price'],
         $_POST['description'],
         $_POST['address'],
-        $_POST['user_id']
+        (int)$_POST['user_id']
     );
     $post->create();
 

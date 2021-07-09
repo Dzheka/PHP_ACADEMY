@@ -1,9 +1,10 @@
 <?php
 
 include 'DB.php';
-
+include 'create.php';
 class Post extends DB
 {
+    use create;
     public $id;
     public $price;
     public $description;
@@ -19,11 +20,15 @@ class Post extends DB
         $this->user_id = $user_id;
     }
 
-    public function create()
-    {
-         $query = "INSERT INTO posts(`price`,`description`,`address`,`user_id`) values ('{$this->price}','{$this->description}','{$this->address}','{$this->user_id}')";
-         $result = mysqli_query($this->conn, $query);
-    }
+//    public function create()
+//    {
+//         $query = "INSERT INTO posts(`price`,`description`,`address`,`user_id`) values (
+//                                                                     '{$this->price}',
+//                                                                     '{$this->description}',
+//                                                                     '{$this->address}',
+//                                                                     '{$this->user_id}')";
+//         $result = mysqli_query($this->conn, $query);
+//    }
 
     public function read()
     {
