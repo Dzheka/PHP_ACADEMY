@@ -15,6 +15,6 @@ class Country
 }
 
 $country = new Country('America', 1000, 10000001);
-echo $country->getName();
-echo $country->getAge();
-echo $country->getPopulation();
+echo "Name: " . $country->getName() . "<br/>";
+echo "Age: " . $country->getAge() . "<br/>";
+echo "Country: " . $country->getPopulation(). "<br/>";
