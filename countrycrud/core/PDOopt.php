@@ -60,6 +60,6 @@ class PDOopt {
     }
 
     public function execute(string $sql, array $option = []) {
-        return $this->apply($sql, $options)->rowCount();
+        return $this->apply($sql, $option)->rowCount();
     }
 }
