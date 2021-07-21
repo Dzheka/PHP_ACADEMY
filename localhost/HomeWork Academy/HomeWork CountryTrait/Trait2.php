@@ -3,7 +3,7 @@
 
 trait Trait2
 {
-    private static function method2()
+    public static function method2()
     {
         return 2;
     }

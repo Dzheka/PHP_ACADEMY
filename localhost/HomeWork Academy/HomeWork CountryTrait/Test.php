@@ -1,5 +1,7 @@
 <?php
-
+include 'Trait1.php';
+include 'Trait2.php';
+include 'Trait3.php';
 
 class Test
 {
@@ -14,6 +16,4 @@ class Test
     }
 }
 
-$test = new Test();
-/*print_r($test->getSum().'<br/>');*/
-echo $test->getSum();
+echo Test::getSum();
