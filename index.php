@@ -1,35 +1,27 @@
-<?php
+<!DOCTYPE html>
+<html lang="en">
 
-include 'Helper.php';
-
-class User {
-
-    use Helper;
-
-    public function __construct($name, $age)
-    {
-        $this->name = $name;
-        $this->age = $age;
-    }
-
-}
-
-class City {
-
-    use Helper;
-
-    public function __construct($name, $age)
-    {
-        $this->name = $name;
-        $this->age = $age;
-    }
-}
-
-//$user = new User('Ibra', 30);
-//echo $user->getName();
-//echo $user->getAge();
-
-
-$city = new City('Dushanbe', 2000);
-echo $city->getName();
-echo $city->getAge();
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<form action="upload.php" method="post" enctype='multipart/form-data'>
+    <p>
+        <label>Name: <input type="text" name="first_name"></label>
+    </p>
+    <p>
+        <label>Surname: <input type="text" name="last_name"></label>
+    </p>
+    <p>
+        <label>Photo: <input type="file" name="avatar"></label>
+    </p>
+    <p>
+        <textarea name="bio" cols="30" rows="10"></textarea>
+    </p>
+    <button type="submit" name="submit">Сохранить</button>
+</form>
+</body>
+</html>
