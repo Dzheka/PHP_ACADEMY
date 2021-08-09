@@ -28,7 +28,7 @@ if (!empty($_POST['registerButton'])) {
     $password = sanitizeFormPassword($_POST['password']);
     $password2 = sanitizeFormPassword($_POST['password2']);
     $email = sanitizeFormString($_POST['email']);
-
+$account = new account();
     $wasSuccesful = $account->register($username,$password,$password2,$email);
 
     if ($wasSuccesful==true){

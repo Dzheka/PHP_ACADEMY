@@ -28,11 +28,15 @@
             return ($error);
         }
         public function validateUsername($un){
+            var_dump($un);
+            if(Str::($username)>25)
             if(strlen(utf8_decode($un)) > 25 || strlen (utf8_decode($un)) < 2){
                 array_push($this->errorArray,constants::$usernameCharacters);
                 return($un);
+
             }
         }
+
         private function validateEmails($em){
 
         }

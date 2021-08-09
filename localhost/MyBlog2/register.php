@@ -14,7 +14,7 @@
 <body>
 
     <div id="inputContainer">
-        <form id="loginForm" action="register.php" method="POST">
+        <form id="loginForm" action="test.php" method="POST">
             <h2>Вход в Блог</h2>
             <p>
                 <label for="loginUsername">Ваше имя</label>
@@ -28,7 +28,7 @@
         </form>
 
 
-        <form id="registerForm" action="register.php" method="POST">
+        <form id="registerForm" action="test.php" method="POST">
             <h2>Зарегистрироваться</h2>
 
             <p>
@@ -51,7 +51,6 @@
             <button type="submit" name="registerButton">Регистрация</button>
         </form>
     </div>
-
 
 </body>
 </html>
